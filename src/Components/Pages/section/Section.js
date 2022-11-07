@@ -3,12 +3,15 @@ import img1 from "../../../Assets/section/images2.jpg";
 import img2 from "../../../Assets/section/images3.png";
 const Section = () => {
   return (
+    
     <div className="m-5 p-5">
+
+      <h1 className="text-secondary m-5"> ABOUT CLINIC</h1>
       <section className=" d-flex justify-content-between w-100 align-items-start mb-5">
         <div className="w-50">
           <img src={img1} variant="start" alt="" className="  w-100%" />
         </div>
-        <div className="w-50 bg-info text-light rounded align-items-start justify-content-start ">
+        <div className="w-50 bg-info text-light rounded align-items-start justify-content-start p-4 ">
           <h3 className="mb-4">
             We are a recognized leader in high-tech ophthalmology services
           </h3>
@@ -28,8 +31,8 @@ const Section = () => {
           </p>
         </div>
       </section>
-      <section className=" d-flex justify-content-between w-100 align-items-start mb-5" >
-        <div className="w-50 bg-info text-light rounded align-items-start justify-content-start ">
+      <section className=" d-flex justify-content-between w-100 align-items-start mb-5 mt-5" >
+        <div className="w-50 bg-info text-light rounded align-items-start justify-content-start p-4 ">
           <h3 className="mb-4">Unique technology</h3>
           <p >
             Unique Technologies designs, manufactures, and distributes an array
