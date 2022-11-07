@@ -6,7 +6,8 @@ import img3 from "../../../Assets/Banner/img3.jpg";
 import "./Banner.css";
 const Banner = () => {
   return (
-    <Carousel>
+    <div className=" m-5 p-5 ">
+      <Carousel>
       <Carousel.Item>
         <img className="Carousel w-100 " src={img1} alt="First slide" />
         <Carousel.Caption>
@@ -33,6 +34,7 @@ const Banner = () => {
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
+    </div>
   );
 };
 
