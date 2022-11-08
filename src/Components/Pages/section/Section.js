@@ -7,11 +7,11 @@ const Section = () => {
     <div className="m-5 p-5">
 
       <h1 className="text-secondary m-5 text-center"> ABOUT CLINIC</h1>
-      <section className=" d-flex  justify-content-between w-100 align-items-start mb-5">
+      <section className=" d-lg-flex g-4 justify-content-between w-100 align-items-start mb-5">
         <div className="w-50">
-          <img src={img1} variant="start" alt="" className="  w-100%" />
+          <img style={{width:'400px'}} src={img1} variant="start" alt="" className="  w-100%" />
         </div>
-        <div className="w-50 bg-info text-light rounded align-items-start justify-content-start p-4 ">
+        <div  className="w-50 bg-info text-light rounded align-items-start justify-content-start p-4 ">
           <h3 className="mb-4 text-center">
             We are a recognized leader in high-tech ophthalmology services
           </h3>
@@ -31,7 +31,7 @@ const Section = () => {
           </p>
         </div>
       </section>
-      <section className=" d-flex justify-content-between w-100 align-items-start mb-5 mt-5" >
+      <section className=" d-lg-flex justify-content-between w-100 align-items-start mb-5 mt-5" >
         <div className="w-50 bg-info text-light rounded align-items-start justify-content-start p-4 ">
           <h3 className="mb-4 text-center">Unique technology</h3>
           <p >
@@ -44,7 +44,7 @@ const Section = () => {
           </p>
         </div>
         <div>
-          <img src={img2} alt="" />
+          <img style={{width:'400px'}} src={img2} alt="" />
         </div>
       </section>
     </div>
