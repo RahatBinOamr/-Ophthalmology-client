@@ -6,6 +6,7 @@ import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Login/Register";
 
 import Service from "../Components/Pages/Service/Service";
+import ServicesCard from "../Components/Pages/Service/ServicesCard";
 import ServicesCardDetails from "../Components/Pages/Service/ServicesCardDetails";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import Main from "../Layout/Main";
@@ -30,6 +31,10 @@ const routes = createBrowserRouter([
             element:<Service></Service>,
             // loader: fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services`)
             
+        },
+        {
+            path:'/service',
+            element:<ServicesCard></ServicesCard>
         },
        
         {
