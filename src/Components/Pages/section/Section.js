@@ -7,7 +7,7 @@ const Section = () => {
     <div className="m-5 p-5">
 
       <h1 className="text-secondary m-5"> ABOUT CLINIC</h1>
-      <section className=" d-flex justify-content-between w-100 align-items-start mb-5">
+      <section className=" d-flex  justify-content-between w-100 align-items-start mb-5">
         <div className="w-50">
           <img src={img1} variant="start" alt="" className="  w-100%" />
         </div>
