@@ -8,8 +8,8 @@ import img6 from '../../../Assets/advantage/img6.png'
 const Advantage = () => {
     return (
         <div class="row p-5 gy-5 g-2">
-            <h4 className='text-secondary'>OUR ADVANTAGES</h4>
-            <h1 className='m-5 text-info'> Good vision for many years</h1>
+            <h4 className='text-secondary text-center'>OUR ADVANTAGES</h4>
+            <h1 className='m-5 text-info text-center'> Good vision for many years</h1>
 
             <section className='d-flex align-items-center  col-2 col-sm-6 col-md-4'>
                 <div>

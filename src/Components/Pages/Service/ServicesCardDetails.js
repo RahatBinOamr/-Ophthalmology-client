@@ -10,7 +10,7 @@ const ServicesCardDetails = () => {
 
   return (
     <div className="m-5 p-5">
-      <Card className="mb-5 mt-4">
+      <Card className="mb-5 mt-4 w-75 justify-content-center">
         {/* <Card.Header className='d-flex justify-content-between align-items-center'>
             <div className='d-flex'>
                 <Image
@@ -32,7 +32,7 @@ const ServicesCardDetails = () => {
 
         <Card.Body className="mb-5" >
         
-          <Card.Img style={{ height: "600px" }} variant="top" src={img} />
+          <Card.Img style={{ height: "300px" }} variant="top" src={img} />
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <div>

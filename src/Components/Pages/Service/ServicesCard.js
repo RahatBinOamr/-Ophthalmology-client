@@ -7,7 +7,7 @@ const ServicesCard = ({ service }) => {
   const {_id, title, description, img } = service;
   return (
     <div>
-      <Col>
+      <Col className="">
         <Card className="mb-5">
           <Card.Body>
             <Image

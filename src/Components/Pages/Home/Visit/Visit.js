@@ -3,40 +3,65 @@ import { Button, Form } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
 const Visit = () => {
+  const handelSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const phone = form.phone.value;
+    const message = form.message.value;
+    console.log(name, email, phone, message);
+  };
   return (
     <div className="mb-5 bg-secondary m-4 p-4 text-bg-light">
-      <Form>
+      <Form onSubmit={handelSubmit}>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Full Name</Form.Label>
-          <Form.Control type="email" placeholder="Full Name" />
+          <Form.Control
+            name="name"
+            type="email"
+            placeholder="Full Name"
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
           <Form.Label>Email address</Form.Label>
-          <Form.Control type="email" placeholder="email" />
+          <Form.Control
+            type="email"
+            name="email"
+            placeholder="email"
+            required
+          />
+        </Form.Group>
+        <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
+          <Form.Label>Phone Number </Form.Label>
+          <Form.Control
+            type="text"
+            name="phone"
+            placeholder="Phone Number"
+            required
+          />
         </Form.Group>
         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-          <Form.Label>Example textarea</Form.Label>
-          <Form.Control as="textarea" placeholder="message" rows={3} />
+          <Form.Label> Message</Form.Label>
+          <Form.Control
+            as="textarea"
+            name="message"
+            placeholder="message"
+            required
+            rows={3}
+          />
         </Form.Group>
 
-
-        <div className="d-flex justify-content-between">
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Button  variant="primary">
-              Visit
-            </Button>
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-            <Link to='/home'>
-            
-              <Button  variant="primary">
-                
-                Go To Home
-              </Button>
-            </Link>
-          </Form.Group>
-        </div>
+        <Button className="mb-3" style={{ width: "100%" }} variant="primary">
+          Visit
+        </Button>
       </Form>
+      <Link to="/home">
+        <Button style={{ width: "100%" }} variant="primary">
+          Go To Home
+        </Button>
+      </Link>
     </div>
   );
 };
