@@ -3,16 +3,30 @@ import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
-
+import {  toast } from 'react-toastify';
+import { Link } from "react-router-dom";
 const Login = () => {
-  const {googleLogin}=useContext(AuthContext)
+  const {googleLogin,signIn}=useContext(AuthContext)
     const handelSubmit = (e)=>{
         e.preventDefault()
         const form = e.target;
-        const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name,email,password);
+        // console.log(name,email,password);
+        signIn(email,password)
+        .then((userCredential) => {
+          
+          const user = userCredential.user;
+          toast.success('Login successful!', { autoClose: 500 })
+          form.reset()
+   
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          toast.error(errorMessage, { autoClose: 500 })
+        });
+
     }
     const handelGoogle =()=>{
       googleLogin()
@@ -22,6 +36,7 @@ const Login = () => {
         const token = credential.accessToken;
      
         const user = result.user;
+        toast.success('Login successful!', { autoClose: 500 })
    
       }).catch((error) => {
     
@@ -31,6 +46,7 @@ const Login = () => {
         const email = error.customData.email;
         
         const credential = GoogleAuthProvider.credentialFromError(error);
+        toast.error(errorMessage, { autoClose: 500 })
        
       });
     }
@@ -49,7 +65,9 @@ const Login = () => {
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" name="password" placeholder="Password" />
         </Form.Group>
-
+        <Form.Text className="text-light">
+        <h5> if you have no account please <Link to='/register'> register</Link></h5>
+        </Form.Text>
         <Button style={{width:'100%'}} variant="primary" type="submit">
           Login
         </Button>

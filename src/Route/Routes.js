@@ -5,12 +5,14 @@ import Register from "../Components/Pages/Login/Register";
 
 import Service from "../Components/Pages/Service/Service";
 import ServicesCardDetails from "../Components/Pages/Service/ServicesCardDetails";
+import ErrorPage from "../ErrorPage/ErrorPage";
 import Main from "../Layout/Main";
 
 const routes = createBrowserRouter([
 {
     path:'/',
     element:<Main></Main>,
+    errorElement:<ErrorPage></ErrorPage>,
     children:[
         {
             path:'/',
