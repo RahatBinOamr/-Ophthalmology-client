@@ -4,9 +4,10 @@ import { Button, Form } from "react-bootstrap";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const Register = () => {
   const{googleLogin,createUser,updateUserProfile}=useContext(AuthContext)
+  const navigate = useNavigate()
     const handelSubmit = (e)=>{
         e.preventDefault()
         const form = e.target;
@@ -21,6 +22,7 @@ const Register = () => {
           const user = userCredential.user;
           toast.success('Register successful!', { autoClose: 500 })
           handleUpdateUserProfile(name, photoURL);
+          navigate('/')
           form.reset()
         })
         .catch((error) => {
@@ -39,7 +41,7 @@ const Register = () => {
      
         const user = result.user;
         toast.success('Login successful!', { autoClose: 500 })
-   
+        navigate('/')
       }).catch((error) => {
     
         const errorCode = error.code;

@@ -5,12 +5,12 @@ import {  useLoaderData } from "react-router-dom";
 import Visit from "../Home/Visit/Visit";
 
 const ServicesCardDetails = () => {
-  const { title, visit, rating, total_view, description, img } =
+  const {_id, title, visit, rating, total_view, description, img } =
     useLoaderData();
 
   return (
     <div className="m-5 p-5">
-      <Card className="mb-5 mt-4 w-75 justify-content-center">
+      <Card className="mb-5 mt-4 w-75 justify-content-center shadow-lg bg-white rounded">
         {/* <Card.Header className='d-flex justify-content-between align-items-center'>
             <div className='d-flex'>
                 <Image
@@ -55,7 +55,11 @@ const ServicesCardDetails = () => {
         </Card.Footer>
       </Card>
 
-<Visit></Visit>
+<Visit
+id={_id}
+title={title}
+visit ={visit}
+></Visit>
 
     </div>
   );

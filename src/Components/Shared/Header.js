@@ -22,13 +22,18 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="">
               <Nav.Link href="/home">Home</Nav.Link>
+              <Nav.Link href="/blog">Blog</Nav.Link>
             {
               user?.email? 
-              <> <Button onClick={()=>logOut()} variant="secondary" size="sm">
+              <> 
+              <Nav.Link href="/visitor">Visitor</Nav.Link>
+              <Button onClick={()=>logOut()} variant="secondary" size="sm">
               Log Out
             </Button></> 
               : 
-              <>   <Nav.Link href="/register">Register</Nav.Link>
+              <>
+              
+              <Nav.Link href="/register">Register</Nav.Link>
               <Nav.Link href="/login">Login</Nav.Link></>
             }
             </Nav>

@@ -42,7 +42,7 @@ const from = location?.state?.from?.pathname || '/';
      
         const user = result.user;
         toast.success('Login successful!', { autoClose: 500 })
-   
+        navigate(from, {replace:true})
       }).catch((error) => {
     
         const errorCode = error.code;

@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
+import Blog from "../Components/Blog";
 import Home from "../Components/Pages/Home/Home";
+import Visitor from "../Components/Pages/Home/Visit/Visitor";
 import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Login/Register";
 
@@ -26,7 +28,7 @@ const routes = createBrowserRouter([
         {
             path:'/',
             element:<Service></Service>,
-            // loader: ()=>fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services`)
+            // loader: fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services`)
             
         },
        
@@ -43,6 +45,14 @@ const routes = createBrowserRouter([
         {
             path:'/login',
             element:<Login></Login>
+        },
+        {
+            path:'/visitor',
+            element:<Visitor></Visitor>
+        },
+        {
+            path:'/blog',
+            element:<Blog></Blog>
         }
        
     ]
