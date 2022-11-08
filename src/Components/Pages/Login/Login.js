@@ -1,8 +1,11 @@
-import React from "react";
+import { GoogleAuthProvider } from "firebase/auth";
+import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
 import { FaGoogle } from "react-icons/fa";
+import { AuthContext } from "../../../Context/AuthContext";
 
 const Login = () => {
+  const {googleLogin}=useContext(AuthContext)
     const handelSubmit = (e)=>{
         e.preventDefault()
         const form = e.target;
@@ -10,6 +13,26 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(name,email,password);
+    }
+    const handelGoogle =()=>{
+      googleLogin()
+      .then((result) => {
+       
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+     
+        const user = result.user;
+   
+      }).catch((error) => {
+    
+        const errorCode = error.code;
+        const errorMessage = error.message;
+     
+        const email = error.customData.email;
+        
+        const credential = GoogleAuthProvider.credentialFromError(error);
+       
+      });
     }
   return (
     <div className="w-75 m-5 p-5 bg-secondary">
@@ -31,7 +54,7 @@ const Login = () => {
           Login
         </Button>
       </Form>
-      <Button style={{width:'100%'}} variant="primary" type="submit">
+      <Button onClick={handelGoogle} style={{width:'100%'}} variant="primary" type="submit">
        <FaGoogle/>  Google
         </Button>
     </div>

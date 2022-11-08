@@ -1,10 +1,12 @@
-import React from "react";
-import { Container, Image } from "react-bootstrap";
+import React, { useContext } from "react";
+import { Button, Container, Image } from "react-bootstrap";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import img from '../../Assets/nav/img.jpg'
 import '../.././Components/Shared/header.css'
+import { AuthContext } from "../../Context/AuthContext";
 const Header = () => {
+  const {user,logOut}=useContext(AuthContext)
   return (
     <Navbar
       collapseOnSelect
@@ -20,8 +22,15 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="">
               <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/register">Register</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link>
+            {
+              user?.email? 
+              <> <Button onClick={()=>logOut()} variant="secondary" size="sm">
+              Log Out
+            </Button></> 
+              : 
+              <>   <Nav.Link href="/register">Register</Nav.Link>
+              <Nav.Link href="/login">Login</Nav.Link></>
+            }
             </Nav>
           </Navbar.Collapse>
         </div>
