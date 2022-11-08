@@ -1,15 +1,20 @@
 import React from "react";
 import { Card, Col, Image } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 const ServicesCard = ({ service }) => {
   console.log(service);
-  const { title, description, img } = service;
+  const {_id, title, description, img } = service;
   return (
-    <div >
+    <div>
       <Col>
         <Card className="mb-5">
           <Card.Body>
-          <Image variant="top" style={{width:'100%',height:'300px'}} src={img} />
+            <Image
+              variant="top"
+              style={{ width: "100%", height: "300px" }}
+              src={img}
+            />
             <div class="card-body">
               <h5 class="card-title"> {title} </h5>
               <p class="card-text">
@@ -21,7 +26,12 @@ const ServicesCard = ({ service }) => {
               </p>
             </div>
           </Card.Body>
-          <button className="border-none" style={{width:'100%'}}> Details </button>
+          <Link to={`/service/${_id}`}>
+            <button className="border-0" style={{ width: "100%" }}>
+              {" "}
+              Details{" "}
+            </button>
+          </Link>
         </Card>
       </Col>
     </div>
