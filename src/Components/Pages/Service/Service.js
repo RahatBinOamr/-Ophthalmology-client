@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import ServicesCard from './ServicesCard';
 import '../Service/service.css';
 import { Row } from 'react-bootstrap';
+
 const Service = () => {
     const [services,setServices]=useState([]);
     useEffect(()=>{

@@ -1,7 +1,8 @@
 import React from "react";
 import { Card } from "react-bootstrap";
 import { FaEye, FaStar } from "react-icons/fa";
-import { useLoaderData } from "react-router-dom";
+import {  useLoaderData } from "react-router-dom";
+import Visit from "../Home/Visit/Visit";
 
 const ServicesCardDetails = () => {
   const { title, visit, rating, total_view, description, img } =
@@ -29,7 +30,7 @@ const ServicesCardDetails = () => {
             </div>
         </Card.Header> */}
 
-        <Card.Body>
+        <Card.Body className="mb-5" >
         
           <Card.Img style={{ height: "600px" }} variant="top" src={img} />
           <Card.Title>{title}</Card.Title>
@@ -39,7 +40,7 @@ const ServicesCardDetails = () => {
             <h3>
              Visit: $<span> {visit} </span>
             </h3>
-            
+           
           </div>
         </Card.Body>
         <Card.Footer className="d-flex justify-content-between">
@@ -53,6 +54,9 @@ const ServicesCardDetails = () => {
           </div>
         </Card.Footer>
       </Card>
+
+<Visit></Visit>
+
     </div>
   );
 };
