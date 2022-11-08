@@ -4,9 +4,13 @@ import { Button, Form } from "react-bootstrap";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
+
   const {googleLogin,signIn}=useContext(AuthContext)
+  const navigate = useNavigate()
+const location = useLocation()
+const from = location?.state?.from?.pathname || '/';
     const handelSubmit = (e)=>{
         e.preventDefault()
         const form = e.target;
@@ -18,6 +22,7 @@ const Login = () => {
           
           const user = userCredential.user;
           toast.success('Login successful!', { autoClose: 500 })
+          navigate(from, {replace:true})
           form.reset()
    
         })
