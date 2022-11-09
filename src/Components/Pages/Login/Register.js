@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
@@ -8,7 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 const Register = () => {
   useTitle('register')
-  const{googleLogin,createUser,updateUserProfile}=useContext(AuthContext)
+  const{googleLogin,createUser,updateUserProfile,loading }=useContext(AuthContext)
   const navigate = useNavigate()
     const handelSubmit = (e)=>{
         e.preventDefault()
@@ -34,6 +34,7 @@ const Register = () => {
         });
        
     }
+   
     const handelGoogle =()=>{
       googleLogin()
       .then((result) => {
@@ -67,6 +68,9 @@ const Register = () => {
           .then(() => { })
           .catch(error => console.error(error));
   }
+//   if(loading){
+//     return  <Spinner animation="border" variant="primary" />
+// }
   return (
     <div className="w-75 m-5 p-5 bg-secondary">
       <Form onSubmit={handelSubmit} className="mb-3">

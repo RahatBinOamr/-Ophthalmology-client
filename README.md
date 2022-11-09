@@ -1,4 +1,17 @@
+# Live LinK:https://ophthalmology-6b951.web.app/
+# client :https://github.com/Porgramming-Hero-web-course/b6a11-service-review-client-side-RahatBinOamr.git
+
+# server: https://github.com/Porgramming-Hero-web-course/b6a11-service-review-server-side-RahatBinOamr.git
 # Getting Started with Create React App
+
+
+# project statement 
+1.install react react router dom bootstrap react bootstrap .
+2.install firebase and create .local env file and store firebase config
+3.create useTitle hook and use some component
+4.create service component and create services card
+5.create login and register from and use firebase data
+6.finally hosting firebase firebase deploy
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

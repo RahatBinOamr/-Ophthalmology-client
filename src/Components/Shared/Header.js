@@ -23,7 +23,7 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="">
               <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/blogs">Blog</Nav.Link>
+              <Nav.Link href="/blog">Blog</Nav.Link>
             {
               user?.email? 
               <> 
