@@ -2,37 +2,21 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import { FaEye, FaStar } from "react-icons/fa";
 import {  useLoaderData } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 import Visit from "../Home/Visit/Visit";
 
 const ServicesCardDetails = () => {
   const {_id, title, visit, rating, total_view, description, img } =
     useLoaderData();
-
+useTitle('details')
   return (
-    <div className="m-5 p-5">
+    <div className="m-5 p-5 ">
       <Card className="mb-5 mt-4 w-75 justify-content-center shadow-lg bg-white rounded">
-        {/* <Card.Header className='d-flex justify-content-between align-items-center'>
-            <div className='d-flex'>
-                <Image
-                    roundedCircle
-                    className='me-2'
-                    src={instructor?.img}
-                    style={{ height: '60px' }}
-                ></Image>
-                <div>
-                    <p className='mb-0'>{instructor?.name}</p>
-                    <p>{instructor?.published_date}</p>
-                </div>
-            </div>
-            <div>
-                <FaRegBookmark className='me-2'></FaRegBookmark>
-                <FaShareAlt></FaShareAlt>
-            </div>
-        </Card.Header> */}
+       
 
         <Card.Body className="mb-5" >
         
-          <Card.Img style={{ height: "300px" }} variant="top" src={img} />
+          <Card.Img className="imgsrc" style={{ height: "300px" }} variant="top" src={img} />
           <Card.Title>{title}</Card.Title>
           <Card.Text>{description}</Card.Text>
           <div>

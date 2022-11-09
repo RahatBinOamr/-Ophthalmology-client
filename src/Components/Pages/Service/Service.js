@@ -35,6 +35,7 @@ const Service = () => {
                     <Card className="mb-5">
                       <Card.Body>
                         <Image
+                        className="imgsrc"
                           variant="top"
                           style={{ width: "100%", height: "300px" }}
                           src={service.img}

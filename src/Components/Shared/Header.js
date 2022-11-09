@@ -5,6 +5,7 @@ import Navbar from "react-bootstrap/Navbar";
 import img from '../../Assets/nav/img.jpg'
 import '../.././Components/Shared/header.css'
 import { AuthContext } from "../../Context/AuthContext";
+import { FaUser } from "react-icons/fa";
 const Header = () => {
   const {user,logOut}=useContext(AuthContext)
   return (
@@ -22,11 +23,21 @@ const Header = () => {
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="">
               <Nav.Link href="/home">Home</Nav.Link>
-              <Nav.Link href="/blog">Blog</Nav.Link>
+              <Nav.Link href="/blogs">Blog</Nav.Link>
             {
               user?.email? 
               <> 
-              <Nav.Link href="/visitor">Visitor</Nav.Link>
+              <Nav.Link className="me-3" href="/visitor">Visitor</Nav.Link>
+              {user?.photoURL ? (
+              <Image
+              className="me-3"
+              style={{ height: "30px" }}
+              roundedCircle
+              src={user?.photoURL}
+            ></Image>
+            ) : (
+              <FaUser className="me-3"></FaUser>
+            )}
               <Button onClick={()=>logOut()} variant="secondary" size="sm">
               Log Out
             </Button></> 
@@ -34,7 +45,10 @@ const Header = () => {
               <>
               
               <Nav.Link href="/register">Register</Nav.Link>
-              <Nav.Link href="/login">Login</Nav.Link></>
+              <Nav.Link href="/login">Login</Nav.Link>
+              
+             
+              </>
             }
             </Nav>
           </Navbar.Collapse>

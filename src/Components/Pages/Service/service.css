@@ -1,3 +1,6 @@
 .service{
     gap: 20px;
 }
+.imgsrc:hover{
+transform:scale(1.4) ;
+}
