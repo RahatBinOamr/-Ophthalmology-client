@@ -5,8 +5,9 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 const Login = () => {
-
+useTitle('login')
   const {googleLogin,signIn}=useContext(AuthContext)
   const navigate = useNavigate()
 const location = useLocation()

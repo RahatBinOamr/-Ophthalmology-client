@@ -3,9 +3,10 @@ import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
+import useTitle from "../../../../Hooks/useTitle";
 const Visit = ({id,title,visit}) => {
   const {user}= useContext(AuthContext)
- 
+ useTitle('Visit')
   const handelSubmit = (e) => {
     e.preventDefault();
     const form = e.target;

@@ -2,9 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../../Context/AuthContext";
+import useTitle from "../../../../Hooks/useTitle";
 import VisitorRow from "./VisitorRow";
 
 const Visitor = () => {
+  useTitle('Visitor')
   const { user } = useContext(AuthContext);
   const [visits, setVisits] = useState([]);
   useEffect(() => {

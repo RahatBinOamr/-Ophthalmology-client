@@ -5,7 +5,9 @@ import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
 import { Link, useNavigate } from "react-router-dom";
+import useTitle from "../../../Hooks/useTitle";
 const Register = () => {
+  useTitle('register')
   const{googleLogin,createUser,updateUserProfile}=useContext(AuthContext)
   const navigate = useNavigate()
     const handelSubmit = (e)=>{

@@ -1,8 +1,11 @@
 import React, { useState }  from "react";
 import { Button, Form } from "react-bootstrap";
 import { useLoaderData } from "react-router-dom";
+import { toast } from "react-toastify";
+import useTitle from "../../../../Hooks/useTitle";
 
 const Update = () => {
+  useTitle('update')
   const patient= useLoaderData()
   console.log(patient)
   const [visits, setVisits] = useState([]);
@@ -17,7 +20,7 @@ const Update = () => {
     .then(res => res.json())
     .then(data=>{
         if(data.acknowledged){
-            // alert('user Update successfully')
+          toast.success('Update successful!', { autoClose: 500 })
             e.target.reset()
         }
     })
