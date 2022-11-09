@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const VisitorRow = ({visitor,handleDelete,handleStatusUpdate}) => {
+const VisitorRow = ({visitor,handleDelete}) => {
     const {_id,name,visit,email}=visitor;
     console.log(visitor)
   return (
@@ -10,7 +11,13 @@ const VisitorRow = ({visitor,handleDelete,handleStatusUpdate}) => {
         <td>{name} </td>
         <td>{email} </td>
         <td>{visit} </td>
-        <td> <button onClick={()=>handleStatusUpdate(_id)}> Update </button> </td>
+        <td> 
+        <Link to={`/update/${_id}`}>
+        <button >Edit </button>
+        
+        </Link>  
+          
+        </td>
       </tr>
     
   );

@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
 const Visit = ({id,title,visit}) => {
   const {user}= useContext(AuthContext)
+ 
   const handelSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -60,7 +61,7 @@ const Visit = ({id,title,visit}) => {
         <Form.Label>Message</Form.Label>
         <Form.Control as="textarea" rows={3} name="message" placeholder="message" required/>
       </Form.Group>
-        <Button style={{width:'100%'}} variant="primary" type="submit">
+        <Button style={{width:'100%'}}  variant="primary" type="submit">
          visit
         </Button>
       </Form>

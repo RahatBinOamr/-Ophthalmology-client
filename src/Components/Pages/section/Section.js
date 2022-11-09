@@ -44,7 +44,7 @@ const Section = () => {
           </p>
         </div>
         <div>
-          <img style={{width:'400px'}} src={img2} alt="" />
+          <img style={{width:'350px'}} src={img2} alt="" />
         </div>
       </section>
     </div>

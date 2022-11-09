@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import Blog from "../Components/Blog";
 import Home from "../Components/Pages/Home/Home";
+import Update from "../Components/Pages/Home/Visit/Update";
 import Visitor from "../Components/Pages/Home/Visit/Visitor";
 import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Login/Register";
@@ -44,6 +45,13 @@ const routes = createBrowserRouter([
             element:<PrivateRoute><ServicesCardDetails></ServicesCardDetails></PrivateRoute>
         },
         {
+            path:'/update/:id',
+            loader: ({params})=>{
+                return fetch(`https://dentatist-server-rahatbinoamr.vercel.app/visitors/${params.id}`)
+            },
+            element:<Update></Update>
+        },
+        {
             path:'register',
             element:<Register></Register>
         },
@@ -53,7 +61,7 @@ const routes = createBrowserRouter([
         },
         {
             path:'/visitor',
-            element:<Visitor></Visitor>
+            element:<PrivateRoute><Visitor></Visitor></PrivateRoute>
         },
         {
             path:'/blog',

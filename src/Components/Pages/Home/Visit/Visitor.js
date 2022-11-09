@@ -27,7 +27,7 @@ const Visitor = () => {
         .then(data => {
             console.log(data);
             if (data.deletedCount > 0){
-                toast.success('Register successful!', { autoClose: 500 })
+                toast.success('Delete successful!', { autoClose: 500 })
                 const remaining = visits.filter(odr => odr._id !== id);
                 setVisits(remaining);
                
@@ -35,27 +35,7 @@ const Visitor = () => {
         })
     }
 }
-const handleStatusUpdate = id => {
-    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/visitors/${id}`, {
-        method: 'PATCH', 
-        headers: {
-            'content-type': 'application/json'
-        },
-        body: JSON.stringify({status: 'Approved'})
-    })
-    .then(res => res.json())
-    .then(data => {
-        console.log(data);
-        if(data.modifiedCount > 0) {
-            const remaining = visits.filter(odr => odr._id !== id);
-            const approving = visits.find(odr => odr._id === id);
-            approving.status = 'Approved'
 
-            const newOrders = [approving, ...remaining];
-            setVisits(newOrders);
-        }
-    })
-}
   return (
     <div>
       <div className="p-5">
@@ -71,7 +51,9 @@ const handleStatusUpdate = id => {
           </thead>
           <tbody>
             {visits.map((visitor) => (
-              <VisitorRow key={visitor._id} handleDelete={handleDelete} handleStatusUpdate={handleStatusUpdate} visitor={visitor}></VisitorRow>
+              <VisitorRow key={visitor._id}
+              id={visitor._id}
+              handleDelete={handleDelete} visitor={visitor}></VisitorRow>
             ))}
           </tbody>
         </Table>
