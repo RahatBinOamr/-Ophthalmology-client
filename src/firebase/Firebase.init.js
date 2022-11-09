@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyD9Ejl1KWq-WuWN_BVy5PBU7vxalV7-gyI",
-  authDomain: "ophthalmology-6b951.firebaseapp.com",
-  projectId: "ophthalmology-6b951",
-  storageBucket: "ophthalmology-6b951.appspot.com",
-  messagingSenderId: "50276521816",
-  appId: "1:50276521816:web:96e5513aa463bab986772d"
+apiKey: process.env.REACT_APP_apiKey,
+authDomain: process.env.REACT_APP_authDomain,
+projectId: process.env.REACT_APP_projectId,
+storageBucket: process.env.REACT_APP_storageBucket,
+messagingSenderId: process.env.REACT_APP_messagingSenderId,
+appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
