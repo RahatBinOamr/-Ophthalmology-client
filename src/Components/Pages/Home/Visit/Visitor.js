@@ -49,9 +49,11 @@ const Visitor = () => {
           <thead>
             <tr>
               <th>#</th>
+              <th>photo</th>
               <th>Name</th>
               <th>Email</th>
               <th>Visit</th>
+              <th>Message</th>
               <th>#</th>
             </tr>
           </thead>

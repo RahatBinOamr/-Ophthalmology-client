@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { AuthContext } from "../../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
 import useTitle from "../../../../Hooks/useTitle";
@@ -13,12 +13,13 @@ const Visit = ({id,title,visit}) => {
     const name = form.name.value;
     const email = user?.email
     const phone = form.phone.value;
+    const photo = form.photo.value
     const message = form.message.value;
     console.log(name, email, phone,message);
 
     const visitor ={
       id,title,visit,
-      
+      photo,
       name,email,phone,message
       
     }
@@ -36,7 +37,7 @@ const Visit = ({id,title,visit}) => {
       console.log(data);
       if(data.acknowledged){
         form.reset()
-        toast.success('visit successfully!', { autoClose: 500 })
+        toast.success('review successfully!', { autoClose: 500 })
       }
     })
     .catch(err=>console.error(err))
@@ -49,7 +50,10 @@ const Visit = ({id,title,visit}) => {
           <Form.Label>Full Name</Form.Label>
           <Form.Control type="text" name="name" placeholder="Full Name" required />
         </Form.Group>
-        
+        <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Label>Photo URL</Form.Label>
+                <Form.Control name="photo" type="text" placeholder="Phot URL" />
+            </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
           <Form.Control type="email" name="email" placeholder="Enter email"  defaultValue={user?.email} />
@@ -63,7 +67,7 @@ const Visit = ({id,title,visit}) => {
         <Form.Control as="textarea" rows={3} name="message" placeholder="message" required/>
       </Form.Group>
         <Button style={{width:'100%'}}  variant="primary" type="submit">
-         visit
+         Added review
         </Button>
       </Form>
      
