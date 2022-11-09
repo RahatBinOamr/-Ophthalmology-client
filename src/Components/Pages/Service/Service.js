@@ -13,7 +13,7 @@ const Service = () => {
       .then((data) => setServices(data));
   }, [services]);
 
-  console.log(services);
+  // console.log(services);
   let count = 0;
 
   return (

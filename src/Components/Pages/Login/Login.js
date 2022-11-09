@@ -1,5 +1,5 @@
 import { GoogleAuthProvider } from "firebase/auth";
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { Button, Form } from "react-bootstrap";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
@@ -23,7 +23,23 @@ const from = location?.state?.from?.pathname || '/';
           
           const user = userCredential.user;
           toast.success('Login successful!', { autoClose: 500 })
+          const currentUser = {
+            email:user.email
+          }
+          console.log(currentUser)
+         fetch(`https://dentatist-server-rahatbinoamr.vercel.app/jwt`,{
+          method:'POST',
+          headers:{
+            'content-type':'application/json'
+          },
+          body: JSON.stringify(currentUser)
+
+         }).then(res=>res.json())
+         .then(data=>{
+          console.log(data);
+          localStorage.setItem('token',data.token)
           navigate(from, {replace:true})
+         })
           form.reset()
    
         })
