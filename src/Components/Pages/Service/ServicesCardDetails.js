@@ -6,7 +6,11 @@ import useTitle from "../../../Hooks/useTitle";
 import Visit from "../Home/Visit/Visit";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+
+
+
 const ServicesCardDetails = () => {
+ 
   const { _id, title, visit, rating, total_view, description, img } =
     useLoaderData();
   useTitle("details");
@@ -42,8 +46,7 @@ const ServicesCardDetails = () => {
           </div>
         </Card.Footer>
       </Card>
-
-      <Visit id={_id} title={title} visit={visit}></Visit>
+  <Visit id={_id} title={title} visit={visit}></Visit>
     </div>
   );
 };

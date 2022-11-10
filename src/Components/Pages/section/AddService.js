@@ -19,7 +19,7 @@ const AddService = () => {
         name,img,description,visit
     }
     console.log(service);
-    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services`,{
+    fetch(`https://dentatist-server.vercel.app/services`,{
         method:'POST',
         headers:{
             'content-type':'application/json'

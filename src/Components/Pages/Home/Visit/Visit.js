@@ -24,7 +24,7 @@ const Visit = ({id,title,visit}) => {
       
     }
 
-    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/visitors`,{
+    fetch(`https://dentatist-server.vercel.app/visitors`,{
       method:'POST',
       headers:{
         'content-type':'application/json'
@@ -44,6 +44,7 @@ const Visit = ({id,title,visit}) => {
   };
   return (
     <div className="mb-5 bg-secondary m-4 p-4 text-bg-light">
+      <h1> Please Review </h1>
        <Form onSubmit={handelSubmit} className="mb-3">
        
         <Form.Group className="mb-3" controlId="formBasicEmail">

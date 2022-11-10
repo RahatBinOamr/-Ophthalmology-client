@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from "react";
 import {  Row } from "react-bootstrap";
+import useTitle from "../../../Hooks/useTitle";
 import MyTotalService from "./MyTotalService";
 
 
 
 const MyService = () => {
-  
+  useTitle('MyService')
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services`)
+    fetch(`https://dentatist-server.vercel.app/services`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [services]);

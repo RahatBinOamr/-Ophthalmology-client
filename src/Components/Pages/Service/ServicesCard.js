@@ -7,7 +7,7 @@ const ServicesCard = () => {
   
   const [services, setServices] = useState([]);
   useEffect(() => {
-    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services`)
+    fetch(`https://dentatist-server.vercel.app/services`)
       .then((res) => res.json())
       .then((data) => setServices(data));
   }, [services]);

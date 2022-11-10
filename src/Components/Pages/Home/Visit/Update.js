@@ -18,7 +18,7 @@ const Update = () => {
       email: e.target.email.value,
       message: e.target.message.value
     }
-    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/visitors/${patient?._id}`, {
+    fetch(`https://dentatist-server.vercel.app/visitors/${patient?._id}`, {
         method: 'PATCH', 
         headers: {
             'content-type': 'application/json'
