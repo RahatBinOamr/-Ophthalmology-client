@@ -8,6 +8,10 @@ import { AuthContext } from "../../Context/AuthContext";
 import { FaUser } from "react-icons/fa";
 const Header = () => {
   const {user,logOut}=useContext(AuthContext)
+  const hadelLogout=()=>{
+    logOut()
+    localStorage.clear()
+  }
   return (
     <Navbar
       collapseOnSelect
@@ -41,7 +45,7 @@ const Header = () => {
             ) : (
               <FaUser className="me-3"></FaUser>
             )}
-              <Button onClick={()=>logOut()} variant="secondary" size="sm">
+              <Button onClick={hadelLogout} variant="secondary" size="sm">
               Log Out
             </Button></> 
               : 

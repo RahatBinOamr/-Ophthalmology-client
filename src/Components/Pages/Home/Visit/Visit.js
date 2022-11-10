@@ -35,7 +35,7 @@ const Visit = ({id,title,visit}) => {
     .then(res=>res.json())
     .then(data=> {
       console.log(data);
-      if(data?.acknowledged){
+      if(data.acknowledged){
         form.reset()
         toast.success('review successfully!', { autoClose: 500 })
       }

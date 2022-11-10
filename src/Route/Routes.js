@@ -32,7 +32,7 @@ const routes = createBrowserRouter([
         {
             path:'/',
             element:<Service></Service>,
-            // loader: fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services`)
+           
             
         },
         {
@@ -42,14 +42,14 @@ const routes = createBrowserRouter([
        
         {
             path:'/service/:id',
-            loader:({params})=> fetch(`https://dentatist-server-rahatbinoamr.vercel.app/services/${params.id}`),
+            loader:({params})=> fetch(`https://dentatist-server.vercel.app/services/${params.id}`),
            
             element:<PrivateRoute><ServicesCardDetails></ServicesCardDetails></PrivateRoute>
         },
         {
             path:'/update/:id',
             loader: ({params})=>{
-                return fetch(`https://dentatist-server-rahatbinoamr.vercel.app/visitors/${params.id}`)
+                return fetch(`https://dentatist-server.vercel.app/visitors/${params.id}`)
             },
             element:<Update></Update>
         },
