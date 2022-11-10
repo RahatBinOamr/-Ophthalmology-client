@@ -1,8 +1,12 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 
 const AddService = () => {
+  const addToast = ()=>{
+    toast.success('service added successful!', { autoClose: 500 })
+  }
   const handelSubmit = (e) => {
     e.preventDefault();
 
@@ -55,7 +59,7 @@ const AddService = () => {
           />
         </Form.Group>
 
-        <Button style={{ width: "100%" }} variant="primary" type="submit">
+        <Button onClick={addToast} style={{ width: "100%" }} variant="primary" type="submit">
           Service Added
         </Button>
       </Form>

@@ -11,7 +11,7 @@ const Visitor = () => {
   const [visits, setVisits] = useState([]);
   useEffect(() => {
     fetch(
-      `https://dentatist-server-rahatbinoamr.vercel.app/visitors?email=${user?.email}`,{
+      `https://dentatist-server.vercel.app/visitors?email=${user?.email}`,{
         headers:{
           authorization:`Bearer ${localStorage.getItem('token')}`
         }

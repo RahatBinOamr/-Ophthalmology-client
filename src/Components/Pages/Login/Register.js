@@ -57,7 +57,9 @@ const Register = () => {
        
       });
     }
-    
+    if(loading){
+      return  <Spinner animation="border" variant="primary" />
+  }
     const handleUpdateUserProfile = (name, photoURL) => {
       const profile = {
           displayName: name,

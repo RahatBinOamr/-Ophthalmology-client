@@ -27,7 +27,7 @@ const Update = () => {
     })
     .then(res => res.json())
     .then(data=>{
-        if(data?.success){
+        if(data.success){
           toast.success(data.message);
             e.target.reset()
         }

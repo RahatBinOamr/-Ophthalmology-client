@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth";
 import React, { useContext, useEffect } from "react";
-import { Button, Form } from "react-bootstrap";
+import { Button, Form, Spinner } from "react-bootstrap";
 import { FaGoogle } from "react-icons/fa";
 import { AuthContext } from "../../../Context/AuthContext";
 import {  toast } from 'react-toastify';
@@ -8,7 +8,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../../Hooks/useTitle";
 const Login = () => {
 useTitle('login')
-  const {googleLogin,signIn}=useContext(AuthContext)
+  const {googleLogin,signIn,loading}=useContext(AuthContext)
   const navigate = useNavigate()
 const location = useLocation()
 const from = location?.state?.from?.pathname || '/';
@@ -72,6 +72,9 @@ const from = location?.state?.from?.pathname || '/';
        
       });
     }
+    if(loading){
+      return  <Spinner animation="border" variant="primary" />
+  }
   return (
     <div className="w-75 m-5 p-5 bg-secondary">
       <Form onSubmit={handelSubmit} className="mb-3">
