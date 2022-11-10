@@ -5,6 +5,7 @@ import Update from "../Components/Pages/Home/Visit/Update";
 import Visitor from "../Components/Pages/Home/Visit/Visitor";
 import Login from "../Components/Pages/Login/Login";
 import Register from "../Components/Pages/Login/Register";
+import AddService from "../Components/Pages/section/AddService";
 
 import Service from "../Components/Pages/Service/Service";
 import ServicesCard from "../Components/Pages/Service/ServicesCard";
@@ -66,6 +67,10 @@ const routes = createBrowserRouter([
         {
             path:'/blog',
             element:<Blog></Blog>
+        },
+        {
+            path:'/addService',
+            element:<AddService></AddService>
         }
        
     ]

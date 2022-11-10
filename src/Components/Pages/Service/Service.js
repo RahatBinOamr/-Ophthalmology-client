@@ -12,7 +12,7 @@ const Service = () => {
       .then((data) => setServices(data));
   }, [services]);
 
-  // console.log(services);
+  console.log(services);
   let count = 0;
 
   return (
@@ -24,7 +24,7 @@ const Service = () => {
       </h1>
 
       <Row className=" row-cols-1  row-cols-md-3 row-cols-lg-4 g-4 service  ">
-        {services.map((service) =>{
+        {services?.map((service) =>{
           count = count + 1;
           if (count <= 3) {
             return (
@@ -34,27 +34,27 @@ const Service = () => {
                     <Card className="mb-5">
                       <Card.Body>
                         <PhotoProvider>
-                          <PhotoView src={service.img}>
+                          <PhotoView src={service?.img}>
                             <Image
                               variant="top"
                               style={{ width: "100%", height: "300px" }}
-                              src={service.img}
+                              src={service?.img}
                             />
                           </PhotoView>
                         </PhotoProvider>
 
                         <div class="card-body">
-                          <h5 class="card-title"> {service.title} </h5>
+                          <h5 class="card-title"> {service?.title} </h5>
                           <p class="card-text">
-                            {service.description.length > 100 ? (
-                              <> {service.description.slice(0, 100) + "..."} </>
+                            {service?.description?.length > 100 ? (
+                              <> {service?.description?.slice(0, 100) + "..."} </>
                             ) : (
-                              service.description
+                              service?.description
                             )}
                           </p>
                         </div>
                       </Card.Body>
-                      <Link to={`/service/${service._id}`}>
+                      <Link to={`/service/${service?._id}`}>
                         <button className="border-0" style={{ width: "100%" }}>
                           
                           Details

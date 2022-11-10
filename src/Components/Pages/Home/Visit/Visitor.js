@@ -7,7 +7,7 @@ import VisitorRow from "./VisitorRow";
 
 const Visitor = () => {
   useTitle('Visitor')
-  const { user ,logOut} = useContext(AuthContext);
+  const { user } = useContext(AuthContext);
   const [visits, setVisits] = useState([]);
   useEffect(() => {
     fetch(
@@ -17,14 +17,12 @@ const Visitor = () => {
         }
       }
     )
-      .then((res) => {
-       
-       return res.json()
-      })
+      .then((res) => res.json())
+      
       .then((data) => {
         setVisits(data);
       });
-  }, [user?.email,logOut]);
+  }, [user?.email]);
 
   const handleDelete = id =>{
     const proceed = window.confirm('Are you sure, you want to cancel this order');
@@ -61,7 +59,7 @@ const Visitor = () => {
             </tr>
           </thead>
           <tbody>
-            {visits.map((visitor) => (
+            {visits?.map((visitor) => (
               <VisitorRow key={visitor._id}
               id={visitor._id}
               handleDelete={handleDelete} visitor={visitor}></VisitorRow>

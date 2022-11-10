@@ -18,9 +18,9 @@ const ServicesCard = () => {
       <div className="m-5 p-5">
         <Row className=" row-cols-1  row-cols-md-2 row-cols-lg-3 g-4   ">
             {
-              services.map(service=><TotalService
+              services?.map(service=><TotalService
               
-              key={service._id}
+              key={service?._id}
               service={service}
               
               ></TotalService>)

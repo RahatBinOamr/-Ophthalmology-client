@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
 const TotalService = ({ service }) => {
-  const { _id, title, description, img } = service;
+  const { _id, title, description} = service;
   return (
     <div>
       <Col className="shadow-lg bg-white rounded">
