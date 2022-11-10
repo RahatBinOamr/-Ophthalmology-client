@@ -37,7 +37,7 @@ const AddService = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>title</Form.Label>
-          <Form.Control type="text" name="name" placeholder="Full Name" />
+          <Form.Control type="text" name="name" placeholder="title" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
           <Form.Label>Visit</Form.Label>
@@ -50,7 +50,7 @@ const AddService = () => {
             as="textarea"
             rows={3}
             name="message"
-            placeholder="message"
+            placeholder="description"
             required
           />
         </Form.Group>

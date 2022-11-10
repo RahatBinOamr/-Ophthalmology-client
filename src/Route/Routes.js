@@ -68,6 +68,7 @@ const routes = createBrowserRouter([
             path:'/blog',
             element:<Blog></Blog>
         },
+       
         {
             path:'/addService',
             element:<AddService></AddService>

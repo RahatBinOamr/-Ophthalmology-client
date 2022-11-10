@@ -29,7 +29,7 @@ const Header = () => {
               <> 
 
               <Nav.Link className="me-3" href="/addService">Add service</Nav.Link>
-              <Nav.Link className="me-3" href="/visitor">Visitor</Nav.Link>
+              <Nav.Link className="me-3" href="/visitor">My Review</Nav.Link>
               {user?.photoURL ? (
               <Image
               className="me-3"

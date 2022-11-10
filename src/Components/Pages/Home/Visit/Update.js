@@ -18,7 +18,7 @@ const Update = () => {
       email: e.target.email.value,
       message: e.target.message.value
     }
-    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/visitors/${patient._id}`, {
+    fetch(`https://dentatist-server-rahatbinoamr.vercel.app/visitors/${patient?._id}`, {
         method: 'PATCH', 
         headers: {
             'content-type': 'application/json'
@@ -27,7 +27,7 @@ const Update = () => {
     })
     .then(res => res.json())
     .then(data=>{
-        if(data.success){
+        if(data?.success){
           toast.success(data.message);
             e.target.reset()
         }

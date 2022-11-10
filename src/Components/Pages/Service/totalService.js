@@ -11,19 +11,19 @@ const TotalService = ({ service }) => {
         <Card className="mb-5">
           <Card.Body>
             <PhotoProvider>
-              <PhotoView src={service.img}>
+              <PhotoView src={service?.img}>
                 <Image
                   variant="top"
                   style={{ width: "100%", height: "300px" }}
-                  src={service.img}
+                  src={service?.img}
                 />
               </PhotoView>
             </PhotoProvider>
             <div class="card-body">
               <h5 class="card-title"> {title} </h5>
               <p class="card-text">
-                {description.length > 100 ? (
-                  <> {description.slice(0, 100) + "..."} </>
+                {description?.length > 100 ? (
+                  <> {description?.slice(0, 100) + "..."} </>
                 ) : (
                   description
                 )}

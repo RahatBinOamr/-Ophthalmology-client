@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Table } from "react-bootstrap";
+import { Spinner, Table } from "react-bootstrap";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../../../Context/AuthContext";
 import useTitle from "../../../../Hooks/useTitle";
@@ -7,7 +7,7 @@ import VisitorRow from "./VisitorRow";
 
 const Visitor = () => {
   useTitle('Visitor')
-  const { user } = useContext(AuthContext);
+  const { user,loading } = useContext(AuthContext);
   const [visits, setVisits] = useState([]);
   useEffect(() => {
     fetch(
@@ -33,14 +33,18 @@ const Visitor = () => {
         .then(res => res.json())
         .then(data => {
             console.log(data);
-            if (data.deletedCount > 0){
+            if (data?.deletedCount > 0){
                 toast.success('Delete successful!', { autoClose: 500 })
-                const remaining = visits.filter(odr => odr._id !== id);
+                const remaining = visits?.filter(odr => odr?._id !== id);
                 setVisits(remaining);
                
             }
         })
     }
+}
+
+if(loading){
+  return  <Spinner animation="border" variant="primary" />
 }
 
   return (
@@ -60,8 +64,8 @@ const Visitor = () => {
           </thead>
           <tbody>
             {visits?.map((visitor) => (
-              <VisitorRow key={visitor._id}
-              id={visitor._id}
+              <VisitorRow key={visitor?._id}
+              id={visitor?._id}
               handleDelete={handleDelete} visitor={visitor}></VisitorRow>
             ))}
           </tbody>
