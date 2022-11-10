@@ -10,7 +10,7 @@ const Header = () => {
   const {user,logOut}=useContext(AuthContext)
   const hadelLogout=()=>{
     logOut()
-    localStorage.clear()
+    // localStorage.clear()
   }
   return (
     <Navbar

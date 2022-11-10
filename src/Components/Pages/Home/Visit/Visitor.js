@@ -7,7 +7,7 @@ import VisitorRow from "./VisitorRow";
 
 const Visitor = () => {
   useTitle('Visitor')
-  const { user,loading } = useContext(AuthContext);
+  const { user,loading , logOut} = useContext(AuthContext);
   const [visits, setVisits] = useState([]);
   useEffect(() => {
     fetch(
@@ -17,12 +17,18 @@ const Visitor = () => {
         }
       }
     )
-      .then((res) => res.json())
+      .then((res) => {
+        if(res.status===401|| res.status===403){
+          localStorage.removeItem('token')
+         return logOut()
+        }
+       return res.json()
+      })
       
       .then((data) => {
-        setVisits(data);
+       return setVisits(data);
       });
-  }, [user?.email]);
+  }, [user?.email,logOut]);
 
   const handleDelete = id =>{
     const proceed = window.confirm('Are you sure, you want to cancel this order');
